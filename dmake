@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+TARGET=`awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}' $1 | dmenu`
+
+make $TARGET --file $1 --silent
+
+exit 0

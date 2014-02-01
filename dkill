@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+TOKILL=($(ps x -o pid,comm | dmenu))
+
+kill $@ ${TOKILL[0]}
+
+exit 0
